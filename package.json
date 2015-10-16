@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "dependencies": {
+    "pulp": "^4.4.0",
+    "purescript": "^0.7.4"
+  },
+  "scripts": {
+    "postinstall": "pulp dep install",
+    "start": "pulp server --config webpack.config.js --host 0.0.0.0 --port 8888 --optimise"
+  }
+}
