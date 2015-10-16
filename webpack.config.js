@@ -1,15 +1,16 @@
 'use strict';
 
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   devtool: 'source-map',
-  entry: './.webpack.js',
+  entry: './.webpack',
   module: {
     loaders: [
       {
-        loader: 'purs-loader',
+        loader: 'purs',
         query: {
           ffi: [
             'bower_components/purescript-*/src/**/*.js',
@@ -29,6 +30,9 @@ module.exports = {
     filename: 'app.js',
     path: __dirname
   },
+  plugins: [
+    new webpack.ProvidePlugin({ React: 'react' })
+  ],
   resolve: {
     extensions: [
       '',
